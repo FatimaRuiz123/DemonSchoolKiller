@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     float horInput;
     bool isGrounded;
 
+    public Camera playerCamera; // Referencia a la cámara que seguirá al jugador
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,10 +33,18 @@ public class PlayerController : MonoBehaviour
         {
             // Mueve hacia adelante o atrás
             transform.Translate(Vector3.forward * Time.deltaTime * verInput * 10);
-                animator.SetInteger("Est", 1); // Idle
+            animator.SetInteger("Est", 1); // Walking
+
             // Gira a la izquierda o derecha
             transform.Rotate(Vector3.up * horInput * 100 * Time.deltaTime);
-                    Debug.Log("caminando");
+
+            // Actualiza la posición y rotación de la cámara para que siga al jugador
+            if (playerCamera != null)
+            {
+                playerCamera.transform.position = new Vector3(transform.position.x, transform.position.y + 8f, transform.position.z + (-5f)) - transform.forward * 5;
+                playerCamera.transform.LookAt(transform.position);
+            }
+
             // Si el jugador está en el suelo y presiona la tecla de salto, entonces salta
             if (isGrounded && Input.GetKeyDown(KeyCode.Space))
             {
@@ -42,7 +52,6 @@ public class PlayerController : MonoBehaviour
                 // Establece el estado a "Jumping"
                 animator.SetInteger("Est", 2);
                 isGrounded = false;
-                Debug.Log("saltoo");
             }
             else
             {
@@ -50,10 +59,6 @@ public class PlayerController : MonoBehaviour
                 if (!isGrounded)
                 {
                     animator.SetInteger("Est", 0); // Idle
-                }
-                else
-                {
-                    animator.SetFloat("Estado", 1); // Walking
                 }
             }
         }
