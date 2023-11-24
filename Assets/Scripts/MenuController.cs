@@ -21,6 +21,12 @@ public class MenuController : MonoBehaviour
  public void LoadNivel2(){
         SceneManager.LoadScene("Escenario 2");
     }
+    public void LoadAtras(){
+        SceneManager.LoadScene("Menu");
+    }
+public void LoadReglas(){
+        SceneManager.LoadScene("Reglas");
+    }
 
     public void Salir(){
         Application.Quit();
