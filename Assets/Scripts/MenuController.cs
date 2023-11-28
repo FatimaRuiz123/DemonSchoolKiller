@@ -2,33 +2,74 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 public class MenuController : MonoBehaviour
 {
-    // Start is called before the first frame update
+//public static MenuController instance;
+    private AudioSource audioSource;
+
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
+
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
     }
-     public void LoadNivel1(){
+    public void LoadNivel1()
+    {
         SceneManager.LoadScene("Escenario 1");
     }
- public void LoadNivel2(){
+    public void LoadNivel2()
+    {
         SceneManager.LoadScene("Escenario 2");
     }
-    public void LoadAtras(){
+
+    public void LoadH1()
+    {
+        SceneManager.LoadScene("Historia");
+    }
+    public void LoadH2()
+    {
+        SceneManager.LoadScene("Historia 2");
+    }
+    public void LoadAtras()
+    {
         SceneManager.LoadScene("Menu");
     }
-public void LoadReglas(){
+    public void LoadReglas()
+    {
         SceneManager.LoadScene("Reglas");
     }
+    public void LoadAtras2()
+    {
+        SceneManager.LoadScene("MenuInicial");
+    }
+    public void LoadTop()
+    {
+        SceneManager.LoadScene("Top 10");
+    }
 
-    public void Salir(){
+
+    public void Salir()
+    {
         Application.Quit();
     }
+    public void StopSound()
+    {
+        // Detén el sonido
+        if (audioSource != null && audioSource.isPlaying)
+        {
+            audioSource.Stop();
+        }
+    }
+
+
 }
+
+
