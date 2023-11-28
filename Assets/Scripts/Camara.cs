@@ -5,17 +5,21 @@ using UnityEngine;
 public class Camara : MonoBehaviour
 {
     public GameObject player;
-    private Vector3 offset = new Vector3(-1,14,-25);
+    private Vector3 offset = new Vector3(1,4,-5);
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+      // LateUpdate is called after Update each frame
+    void LateUpdate()
     {
-        //Offset the camera behind the player by adding to the player's position
+        // Offset the camera behind the player by adding to the player's position
         transform.position = player.transform.position + offset;
+
+        // Rotate the camera to match the player's rotation
+        transform.rotation = player.transform.rotation;
     }
+    
 }
