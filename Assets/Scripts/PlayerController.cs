@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float velocidadMovimiento = 5.0f;
+    public float velocidadMovimiento = 20.0f;
     public float velocidadRotacion = 200.0f;
     private Animator anim;
     public float x, y;
