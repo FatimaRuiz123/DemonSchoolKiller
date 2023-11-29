@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
+    
     public AudioSource soundEffect;
 
     private void Start()

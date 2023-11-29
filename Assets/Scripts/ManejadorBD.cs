@@ -13,6 +13,8 @@ public class ManejadorBD : MonoBehaviour
 
     public InputField nombreInput;
     public Text notificacionText;
+
+    public Text textoTopPuntajes;
     void Start()
     {
         client = new MongoClient("mongodb+srv://unity:unity@cluster0.a53wvhf.mongodb.net/?retryWrites=true&w=majority");
@@ -74,4 +76,62 @@ public class ManejadorBD : MonoBehaviour
         yield return new WaitForSeconds(2f); // Ajusta el tiempo según tus necesidades
         notificacionText.text = "";
     }
+
+    public void MostrarTopPuntajes()
+    {
+        var filter = Builders<BsonDocument>.Filter.Empty; // Filtro vacío para obtener todos los documentos
+        var sort = Builders<BsonDocument>.Sort.Descending("score"); // Ordenar por puntaje de forma descendente
+
+        var topJugadores = collection.Find(filter).Sort(sort).Limit(10).ToList(); // Obtener los 10 primeros jugadores ordenados por puntaje
+
+        // Limpiar la pantalla de top de puntajes antes de mostrar la nueva información
+        LimpiarPantallaTopPuntajes();
+
+        // Mostrar los nombres y puntajes en la pantalla
+        for (int i = 0; i < topJugadores.Count; i++)
+        {
+            string nombre = topJugadores[i]["nombre"].AsString;
+            int score = topJugadores[i]["score"].AsInt32;
+
+            MostrarPuntajeEnPantalla(i + 1, nombre, score);
+        }
+    }
+
+    // Método para mostrar un puntaje en la pantalla
+    private void MostrarPuntajeEnPantalla(int posicion, string nombre, int score)
+    {
+        // Asegúrate de que tienes un objeto Text asignado en el inspector de Unity
+        if (textoTopPuntajes != null)
+        {
+            // Construye el texto que mostrarás
+            string textoPuntaje = $"#{posicion}: {nombre} - Puntaje: {score}";
+
+            // Asigna el texto al objeto Text
+            textoTopPuntajes.text += textoPuntaje + "\n";
+        }
+        else
+        {
+            Debug.LogError("Objeto Text no asignado en el inspector de Unity.");
+        }
+    }
+
+    // Método para limpiar la pantalla de top de puntajes
+    private void LimpiarPantallaTopPuntajes()
+    {
+        // Asegúrate de que tienes un objeto Text asignado en el inspector de Unity
+        if (textoTopPuntajes != null)
+        {
+            // Limpia el texto del objeto Text
+            textoTopPuntajes.text = "";
+        }
+        else
+        {
+            Debug.LogError("Objeto Text no asignado en el inspector de Unity.");
+        }
+    }
+
+    public void MostrarTopPuntajesBoton()
+{
+    MostrarTopPuntajes();
+}
 }
