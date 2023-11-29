@@ -9,11 +9,11 @@ public class AudioManager : MonoBehaviour
 
     // Referencia al AudioSource del escenario principal
     public AudioSource mainAudioSource;
-// Lista de nombres de escenarios donde el sonido debería estar desactivado
+    // Lista de nombres de escenarios donde el sonido debería estar desactivado
     public List<string> scenesWithNoSound;
     void Awake()
     {
-        
+
         // Asegúrate de que solo haya una instancia del objeto persistente
         if (Instance == null)
         {
@@ -22,11 +22,14 @@ public class AudioManager : MonoBehaviour
         }
         else
         {
+            SceneManager.sceneLoaded -= OnSceneLoaded;
             Destroy(gameObject);
         }
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
-void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+{
+    if (mainAudioSource != null)
     {
         // Verifica si el sonido debería estar desactivado en la escena actual
         bool disableSound = scenesWithNoSound.Contains(scene.name);
@@ -34,8 +37,10 @@ void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         // Activa o desactiva el sonido según la condición
         mainAudioSource.enabled = !disableSound;
     }
+}
 
 
 
-    
+
+
 }
