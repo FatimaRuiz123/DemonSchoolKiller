@@ -1715,6 +1715,7 @@ MonoBehaviour:
   nombreInput: {fileID: 1183221260}
   notificacionText: {fileID: 1439187402}
   textoTopPuntajes: {fileID: 0}
+  infoJugadorTexto: {fileID: 0}
 --- !u!4 &1480969878
 Transform:
   m_ObjectHideFlags: 0
