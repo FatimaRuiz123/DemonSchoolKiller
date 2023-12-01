@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     public Rigidbody rb;
     public float fuerzaDeSalto = 8f;
     public bool puedoSaltar;
+
+    public static int score = 0;
     void Start()
     {
         puedoSaltar = false;
@@ -48,4 +50,7 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("tocoSuelo", false);
         anim.SetBool("salte", false);
     }
+
+
+
 }

@@ -23,7 +23,7 @@ public class ManejadorBD : MonoBehaviour
 
     public void GuardarDatosEnBD(int score)
     {
-        string nombre = nombreInput.text;
+        string nombre = nombreInput.text; //Nombre
 
         if (string.IsNullOrEmpty(nombre))
         {
