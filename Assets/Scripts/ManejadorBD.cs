@@ -15,6 +15,7 @@ public class ManejadorBD : MonoBehaviour
     public Text notificacionText;
 
     public Text textoTopPuntajes;
+
     void Start()
     {
         client = new MongoClient("mongodb+srv://unity:unity@cluster0.a53wvhf.mongodb.net/?retryWrites=true&w=majority");
@@ -77,6 +78,7 @@ public class ManejadorBD : MonoBehaviour
         notificacionText.text = "";
     }
 
+
     public void MostrarTopPuntajes()
     {
         var filter = Builders<BsonDocument>.Filter.Empty; // Filtro vacío para obtener todos los documentos
@@ -134,4 +136,7 @@ public class ManejadorBD : MonoBehaviour
 {
     MostrarTopPuntajes();
 }
+
+
+
 }
