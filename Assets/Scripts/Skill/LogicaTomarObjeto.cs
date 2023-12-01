@@ -13,6 +13,13 @@ public class LogicaTomarObjeto : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    private void OnTriggerStay(Collider other){
+        if(other.tag == "Skill" && other.GetComponent<LogicaPotenciador>().destruirAutomatico==true){
+            other.GetComponent<LogicaPotenciador>().Efecto();
+            Destroy(other.gameObject);
+        }
     }
 }
