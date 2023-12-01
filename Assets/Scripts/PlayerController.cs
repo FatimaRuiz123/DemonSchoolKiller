@@ -18,8 +18,6 @@ public class PlayerController : MonoBehaviour
     // public bool puedoSaltar;
     public float fuerzaDeSalto = 8f;
     public bool puedoSaltar;
-
-    public static int score = 0;
     void Start()
     {
         estoyAtacando = false;
@@ -80,7 +78,4 @@ public class PlayerController : MonoBehaviour
     public void DejaDeAvanzar(){
         avanzaSolo = false;
     }
-
-
-
 }
