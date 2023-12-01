@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LogicaBarraVidaJaziel : MonoBehaviour
 {
@@ -21,7 +22,8 @@ public class LogicaBarraVidaJaziel : MonoBehaviour
 
         if (vidaActual <= 0)
         {
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
+            SceneManager.LoadScene("GameOver");
         }
     }
 
