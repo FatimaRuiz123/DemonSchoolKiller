@@ -17,6 +17,7 @@ public class ManejadorBD : MonoBehaviour
     public Text textoTopPuntajes;
 
     void Start()
+
     {
         client = new MongoClient("mongodb+srv://unity:unity@cluster0.a53wvhf.mongodb.net/?retryWrites=true&w=majority");
         db = client.GetDatabase("unity");
