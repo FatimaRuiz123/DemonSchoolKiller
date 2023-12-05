@@ -5696,6 +5696,11 @@ Transform:
   m_Father: {fileID: 1050382155}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 1.139, z: 0}
+--- !u!1 &325859576 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 231657c16f08f6c4c9283beb2fd3411e, type: 3}
+  m_PrefabInstance: {fileID: 1493926018}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &331209694
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6424,7 +6429,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidadMovimiento: 3
   distanciaAtaque: 40
-  logicaBarraVidaDeminios: {fileID: 0}
+  logicaBarraVidaDeminios: {fileID: 359829538}
   "da\xF1oD": 2
 --- !u!114 &359829538
 MonoBehaviour:
@@ -13822,6 +13827,49 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 231657c16f08f6c4c9283beb2fd3411e, type: 3}
   m_PrefabInstance: {fileID: 1493926018}
   m_PrefabAsset: {fileID: 0}
+--- !u!136 &690590122
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325859576}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2.24947
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.0453937, z: 0}
+--- !u!114 &690590124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325859576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49e2086c3e35dee44a735104dcce9e8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  logicaBarraVidaDraco: {fileID: 690590125}
+  "da\xF1oD": 20
+--- !u!114 &690590125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325859576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34e78ac80ae257949bac41868685f373, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vidaMax: 150
+  vidaActual: 0
+  imagenBarraVida: {fileID: 793440262}
 --- !u!1 &693446404
 GameObject:
   m_ObjectHideFlags: 0
@@ -14066,22 +14114,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5221380844292194378, guid: f0f31d6958f5de143bf9963ec2a41351, type: 3}
   m_PrefabInstance: {fileID: 1173460669}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &694059189
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 694059187}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 089c47d301deb13468aea7f358cfd382, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  armasBoxCol: []
-  "pu\xF1oBoxCol": {fileID: 0}
-  playerController: {fileID: 1665501243}
-  armas: []
 --- !u!136 &694059190
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -14096,6 +14128,22 @@ CapsuleCollider:
   m_Height: 1.7505794
   m_Direction: 1
   m_Center: {x: 0.1608568, y: 0.28207067, z: -0.0000011797785}
+--- !u!114 &694059194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694059187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b07364f0b3cef84285379d9fe8a9312, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armasBoxCol: []
+  "pu\xF1oBoxCol": {fileID: 0}
+  playerControllerE2: {fileID: 1665501253}
+  armas: []
 --- !u!1 &700224798
 GameObject:
   m_ObjectHideFlags: 0
@@ -20786,7 +20834,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5221380844292194378, guid: f0f31d6958f5de143bf9963ec2a41351, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0f31d6958f5de143bf9963ec2a41351, type: 3}
@@ -26058,7 +26106,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5221380844292194378, guid: f0f31d6958f5de143bf9963ec2a41351, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5221380844292194378, guid: f0f31d6958f5de143bf9963ec2a41351, type: 3}
       propertyPath: m_TagString
@@ -32488,6 +32536,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: JefeFinalDraco
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 231657c16f08f6c4c9283beb2fd3411e, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 808b473886e63ee448ab19b71c31d819, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 231657c16f08f6c4c9283beb2fd3411e, type: 3}
 --- !u!1001 &1495965618
@@ -37220,44 +37272,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a331a08100e19bf419e5b4ad7cb1d13b, type: 3}
   m_PrefabInstance: {fileID: 949293148}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1665501243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1665501241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b0c9c26c8c957144a445a8ea708605f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  conArma: 0
-  velocidadMovimiento: 5
-  velocidadRotacion: 200
-  x: 0
-  y: 0
-  rb: {fileID: 1665501245}
-  estoyAtacando: 0
-  avanzaSolo: 0
-  fuerzaDeGolpe: 4
-  logicaBarraVidaJaziel: {fileID: 0}
-  "da\xF1oD": 20
---- !u!114 &1665501244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1665501241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f439a437f77a544c896ad66d47bdc8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vidaMax: 100
-  vidaActual: 0
-  imagenBarraVida: {fileID: 1081469788}
 --- !u!54 &1665501245
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -37274,36 +37288,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
---- !u!114 &1665501246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1665501241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 089c47d301deb13468aea7f358cfd382, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  armasBoxCol:
-  - {fileID: 0}
-  "pu\xF1oBoxCol": {fileID: 0}
-  playerController: {fileID: 1665501243}
-  armas:
-  - {fileID: 694059187}
---- !u!114 &1665501247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1665501241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 485e5f5ceb9ddd04eb84c6270337abff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!136 &1665501248
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -37318,6 +37302,74 @@ CapsuleCollider:
   m_Height: 1.4177915
   m_Direction: 1
   m_Center: {x: 0.020913534, y: 0.68748957, z: -0.014277506}
+--- !u!114 &1665501251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665501241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5f3989ff58f8f84fb157fe37da1801c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vidaMax: 100
+  vidaActual: 0
+  imagenBarraVida: {fileID: 1081469788}
+--- !u!114 &1665501253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665501241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48689f34637ac8c4296f9afb5bdd1d62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conArma: 0
+  velocidadMovimiento: 30
+  velocidadRotacion: 200
+  x: 0
+  y: 0
+  rb: {fileID: 1665501245}
+  estoyAtacando: 0
+  avanzaSolo: 0
+  fuerzaDeGolpe: 40
+  logicaBarraVidaJazielE2: {fileID: 1665501251}
+  "da\xF1oD": 20
+--- !u!114 &1665501254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665501241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3892a61cb7685244b59afae535031db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1665501255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665501241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b07364f0b3cef84285379d9fe8a9312, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armasBoxCol:
+  - {fileID: 0}
+  "pu\xF1oBoxCol": {fileID: 0}
+  playerControllerE2: {fileID: 1665501253}
+  armas:
+  - {fileID: 1869820062}
 --- !u!1 &1670619430
 GameObject:
   m_ObjectHideFlags: 0
@@ -42687,20 +42739,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5221380844292194378, guid: f0f31d6958f5de143bf9963ec2a41351, type: 3}
   m_PrefabInstance: {fileID: 942930214}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1869820063
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1869820062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf034fa42db31c64abaac3bd7ebeea7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tomarArmas: {fileID: 0}
-  numeroArma: 0
 --- !u!65 &1869820064
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42714,6 +42752,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.9570349, y: 1.7505794, z: 0.13890226}
   m_Center: {x: 0.1608587, y: 0.2820764, z: 0.0000000042032653}
+--- !u!114 &1869820068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869820062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ffdb0aa663b0de4d8ed54341057a005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tomarArmasE2: {fileID: 0}
+  numeroArma: 0
 --- !u!1 &1871754036
 GameObject:
   m_ObjectHideFlags: 0
@@ -43919,7 +43971,7 @@ GameObject:
   - component: {fileID: 1928702616}
   - component: {fileID: 1928702615}
   - component: {fileID: 1928702614}
-  - component: {fileID: 1928702613}
+  - component: {fileID: 1928702619}
   m_Layer: 0
   m_Name: skills (1)
   m_TagString: Skill
@@ -43927,21 +43979,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1928702613
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1928702612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9311a54b9dbb6444ba9c0774187e6977, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destruirAutomatico: 1
-  logicaJaziel: {fileID: 1665501243}
-  tipo: 1
 --- !u!65 &1928702614
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44033,6 +44070,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1928702619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1928702612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2314d7fb00ac5d440ab0c9dd829e8508, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destruirAutomatico: 1
+  logicaJazielE2: {fileID: 1665501253}
+  tipo: 2
 --- !u!1001 &1931914109
 PrefabInstance:
   m_ObjectHideFlags: 0

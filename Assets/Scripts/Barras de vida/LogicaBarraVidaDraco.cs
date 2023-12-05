@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
-public class LogicaBarraVidaJaziel : MonoBehaviour
+public class LogicaBarraVidaDraco : MonoBehaviour
 {
-    public int vidaMax;
+   public int vidaMax;
     public float vidaActual;
     public Image imagenBarraVida;
     
@@ -22,8 +21,8 @@ public class LogicaBarraVidaJaziel : MonoBehaviour
 
         if (vidaActual <= 0)
         {
-            //gameObject.SetActive(false);
-            SceneManager.LoadScene("GameOver1");
+            gameObject.SetActive(false);
+            SceneManager.LoadScene("Win2");
         }
     }
 
