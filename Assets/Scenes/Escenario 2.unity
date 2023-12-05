@@ -6424,7 +6424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidadMovimiento: 3
   distanciaAtaque: 40
-  logicaBarraVidaDeminios: {fileID: 0}
+  logicaBarraVidaDeminios: {fileID: 359829538}
   "da\xF1oD": 2
 --- !u!114 &359829538
 MonoBehaviour:
@@ -32488,6 +32488,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: JefeFinalDraco
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 231657c16f08f6c4c9283beb2fd3411e, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 808b473886e63ee448ab19b71c31d819, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 231657c16f08f6c4c9283beb2fd3411e, type: 3}
 --- !u!1001 &1495965618
@@ -37241,7 +37245,7 @@ MonoBehaviour:
   estoyAtacando: 0
   avanzaSolo: 0
   fuerzaDeGolpe: 4
-  logicaBarraVidaJaziel: {fileID: 0}
+  logicaBarraVidaJaziel: {fileID: 1665501244}
   "da\xF1oD": 20
 --- !u!114 &1665501244
 MonoBehaviour:
