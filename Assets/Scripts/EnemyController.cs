@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    public float velocidadMovimiento = 3f; // Velocidad a la que se moverá el enemigo.
-    public float distanciaAtaque = 2f; // Distancia a la que el enemigo atacará al jugador.
+    public float velocidadMovimiento = 2f; // Velocidad a la que se moverá el enemigo.
+    public float distanciaAtaque = 1f; // Distancia a la que el enemigo atacará al jugador.
     private Transform jugador; // Referencia al transform del jugador.
     private Rigidbody rb;
+    private Animator anim;
+    public LogicaBarraVidaDeminios logicaBarraVidaDeminios;
+        public float dañoD = 2.0f;
 
     private void Start()
     {
         // Encuentra al jugador por su tag "Player".
         jugador = GameObject.FindGameObjectWithTag("Player").transform;
         rb = GetComponent<Rigidbody>();
+        anim = gameObject.GetComponent<Animator>();
     }
 
     private void Update()
@@ -57,7 +61,17 @@ public class EnemyController : MonoBehaviour
     {
         // Implementa la lógica de ataque aquí.
         Debug.Log("¡Enemigo atacando!");
+        //logicaBarraVidaJaziel.vidaActual -= dañoD;
     }
-
+private void OnTriggerEnter(Collider other)
+    {
+        // Verifica si el objeto con el que colisiona es un enemigo.
+        if (other.CompareTag("Arma"))
+        {
+            // Reduce la vida de Jaziel.
+            // logicaBarraVidaJaziel.vidaActual -= 2.0f; // O el valor que desees.
+            logicaBarraVidaDeminios.vidaActual -= dañoD;
+        }
+    }
     
 }

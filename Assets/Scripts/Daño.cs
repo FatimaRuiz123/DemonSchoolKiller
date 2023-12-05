@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Daño : MonoBehaviour
 {
-    public LogicaBarraVidaJaziel logicaBarraVidaJaziel;
-    public LogicaBarraVidaDeminios logicaBarraVidaDemonio;
-    public LogicaBarraVidaDeminios logicaBarraVidaIris;
-    public float dañoD = 2.0f;
+    //public LogicaBarraVidaJaziel logicaBarraVidaJaziel;
+    
+    //public LogicaBarraVidaDeminios logicaBarraVidaDemonio;
+    //public LogicaBarraVidaIris logicaBarraVidaIris;
+    //public float dañoD = 2.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -19,9 +20,11 @@ public class Daño : MonoBehaviour
     void Update()
     {
         if (Input.GetMouseButtonDown(0)){
-            logicaBarraVidaJaziel.vidaActual -= dañoD;
-            logicaBarraVidaDemonio.vidaActual -= dañoD;
-            logicaBarraVidaIris.vidaActual -= dañoD;
+            //logicaBarraVidaJaziel.vidaActual -= dañoD;
+           // logicaBarraVidaDemonio.vidaActual -= dañoD;
+            //logicaBarraVidaIris.vidaActual -= dañoD;
         }
     }
+
+    
 }

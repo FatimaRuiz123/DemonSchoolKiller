@@ -7,6 +7,8 @@ TagManager:
   - Ground
   - Skill
   - ArmaImpacto
+  - Demonio1
+  - Arma
   layers:
   - Default
   - TransparentFX
