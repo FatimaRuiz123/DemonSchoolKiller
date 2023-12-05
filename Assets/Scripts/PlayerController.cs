@@ -13,11 +13,13 @@ public class PlayerController : MonoBehaviour
 
     public bool estoyAtacando;
     public bool avanzaSolo;
-    public float fuerzaDeGolpe = 4f;
+    public float fuerzaDeGolpe = 40f;
+    public LogicaBarraVidaJaziel logicaBarraVidaJaziel;
+    public float dañoD = 20.0f;
     // public float fuerzaDeSalto = 8f;
     // public bool puedoSaltar;
-    public float fuerzaDeSalto = 8f;
-    public bool puedoSaltar;
+   // public float fuerzaDeSalto = 8f;
+    //public bool puedoSaltar;
     void Start()
     {
         estoyAtacando = false;
@@ -77,5 +79,17 @@ public class PlayerController : MonoBehaviour
     }
     public void DejaDeAvanzar(){
         avanzaSolo = false;
+    }
+     
+
+    private void OnTriggerEnter(Collider other)
+    {
+        // Verifica si el objeto con el que colisiona es un enemigo.
+        if (other.CompareTag("Demonio1"))
+        {
+            // Reduce la vida de Jaziel.
+            // logicaBarraVidaJaziel.vidaActual -= 2.0f; // O el valor que desees.
+            logicaBarraVidaJaziel.vidaActual -= dañoD;
+        }
     }
 }

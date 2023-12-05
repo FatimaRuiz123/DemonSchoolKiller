@@ -35,7 +35,7 @@ public class LogicaPotenciador : MonoBehaviour
             GetComponent<Renderer>().enabled = !GetComponent<Renderer>().enabled;
 
             // Espera un breve período de tiempo antes de cambiar nuevamente el color
-            yield return new WaitForSeconds(0.5f); // Puedes ajustar la velocidad de parpadeo aquí
+            yield return new WaitForSeconds(0.3f); // Puedes ajustar la velocidad de parpadeo aquí
         }
 
         // Asegura que el objeto esté visible al final del parpadeo

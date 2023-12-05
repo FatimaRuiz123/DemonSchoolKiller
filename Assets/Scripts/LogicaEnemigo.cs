@@ -7,7 +7,7 @@ public class LogicaEnemigo : MonoBehaviour
     public int hp;
     public int dañoArma;    
     // public int dañoPuño;
-   // public Animator anim;
+    // public Animator anim;
 
     // Start is called before the first frame update
     void Start()
