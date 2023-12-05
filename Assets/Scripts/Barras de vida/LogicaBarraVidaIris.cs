@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LogicaBarraVidaIris : MonoBehaviour
 {
@@ -19,10 +20,14 @@ public class LogicaBarraVidaIris : MonoBehaviour
     {
         RevisarVida();
 
-        if (vidaActual <= 0)
-        {
-            gameObject.SetActive(false);
-        }
+        float umbral = 0.001f;
+
+    if (vidaActual <= umbral)
+    {
+        gameObject.SetActive(false);
+        SceneManager.LoadScene("Win 1");
+    }
+
     }
 
     void RevisarVida()
